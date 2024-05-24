@@ -1,0 +1,296 @@
+#pragma once
+
+namespace WindowsFormsTask11 {
+
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Drawing;
+
+	/// <summary>
+	/// Сводка для MyForm
+	/// </summary>
+	public ref class MyForm : public System::Windows::Forms::Form
+	{
+	public:
+		MyForm(void)
+		{
+			InitializeComponent();
+			//
+			//TODO: добавьте код конструктора
+			//
+		}
+
+	protected:
+		/// <summary>
+		/// Освободить все используемые ресурсы.
+		/// </summary>
+		~MyForm()
+		{
+			if (components)
+			{
+				delete components;
+			}
+		}
+	private: System::Windows::Forms::Label^ label1;
+	protected:
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::TextBox^ inputMass;
+
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::TextBox^ inputCost;
+	private: System::Windows::Forms::Label^ outputCostOfOneKg;
+
+
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::TextBox^ requiredMass;
+	private: System::Windows::Forms::Label^ OutputCostOfYKg;
+
+
+	private: System::Windows::Forms::Button^ Calculate;
+	private: System::Windows::Forms::Button^ buttonLoad;
+	private: System::Windows::Forms::Button^ buttonSave;
+
+
+	private:
+		/// <summary>
+		/// Обязательная переменная конструктора.
+		/// </summary>
+		System::ComponentModel::Container ^components;
+
+#pragma region Windows Form Designer generated code
+		/// <summary>
+		/// Требуемый метод для поддержки конструктора — не изменяйте 
+		/// содержимое этого метода с помощью редактора кода.
+		/// </summary>
+		void InitializeComponent(void)
+		{
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->inputMass = (gcnew System::Windows::Forms::TextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->inputCost = (gcnew System::Windows::Forms::TextBox());
+			this->outputCostOfOneKg = (gcnew System::Windows::Forms::Label());
+			this->label6 = (gcnew System::Windows::Forms::Label());
+			this->requiredMass = (gcnew System::Windows::Forms::TextBox());
+			this->OutputCostOfYKg = (gcnew System::Windows::Forms::Label());
+			this->Calculate = (gcnew System::Windows::Forms::Button());
+			this->buttonLoad = (gcnew System::Windows::Forms::Button());
+			this->buttonSave = (gcnew System::Windows::Forms::Button());
+			this->SuspendLayout();
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(15, 42);
+			this->label1->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(899, 24);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Відомо, що X кг цукерок коштують A гривень. Визначити, скільки коштує 1 кг і Y кг"
+				L" цих же цукерок.";
+			// 
+			// label2
+			// 
+			this->label2->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->label2->Location = System::Drawing::Point(15, 9);
+			this->label2->Margin = System::Windows::Forms::Padding(6, 0, 6, 0);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(928, 24);
+			this->label2->TabIndex = 1;
+			this->label2->Text = L"Селівко Данііл варіант №48";
+			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(19, 82);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(193, 24);
+			this->label3->TabIndex = 2;
+			this->label3->Text = L"Відома вага цукерок";
+			// 
+			// inputMass
+			// 
+			this->inputMass->Location = System::Drawing::Point(255, 79);
+			this->inputMass->Name = L"inputMass";
+			this->inputMass->Size = System::Drawing::Size(100, 29);
+			this->inputMass->TabIndex = 3;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(19, 120);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(230, 24);
+			this->label4->TabIndex = 4;
+			this->label4->Text = L"Відома вартість цукерок";
+			// 
+			// inputCost
+			// 
+			this->inputCost->Location = System::Drawing::Point(255, 120);
+			this->inputCost->Name = L"inputCost";
+			this->inputCost->Size = System::Drawing::Size(100, 29);
+			this->inputCost->TabIndex = 5;
+			// 
+			// outputCostOfOneKg
+			// 
+			this->outputCostOfOneKg->AutoSize = true;
+			this->outputCostOfOneKg->Location = System::Drawing::Point(19, 264);
+			this->outputCostOfOneKg->Name = L"outputCostOfOneKg";
+			this->outputCostOfOneKg->Size = System::Drawing::Size(420, 24);
+			this->outputCostOfOneKg->TabIndex = 6;
+			this->outputCostOfOneKg->Text = L"Вартість одного кілограма цукерок дорівнює:";
+			// 
+			// label6
+			// 
+			this->label6->AutoSize = true;
+			this->label6->Location = System::Drawing::Point(19, 170);
+			this->label6->Name = L"label6";
+			this->label6->Size = System::Drawing::Size(224, 24);
+			this->label6->TabIndex = 7;
+			this->label6->Text = L"Необхідна вага цукерок";
+			// 
+			// requiredMass
+			// 
+			this->requiredMass->Location = System::Drawing::Point(254, 167);
+			this->requiredMass->Name = L"requiredMass";
+			this->requiredMass->Size = System::Drawing::Size(100, 29);
+			this->requiredMass->TabIndex = 8;
+			// 
+			// OutputCostOfYKg
+			// 
+			this->OutputCostOfYKg->AutoSize = true;
+			this->OutputCostOfYKg->Location = System::Drawing::Point(19, 303);
+			this->OutputCostOfYKg->Name = L"OutputCostOfYKg";
+			this->OutputCostOfYKg->Size = System::Drawing::Size(236, 24);
+			this->OutputCostOfYKg->TabIndex = 9;
+			this->OutputCostOfYKg->Text = L"Y кг цих цукерок  коштує:";
+			// 
+			// Calculate
+			// 
+			this->Calculate->Location = System::Drawing::Point(23, 212);
+			this->Calculate->Name = L"Calculate";
+			this->Calculate->Size = System::Drawing::Size(332, 34);
+			this->Calculate->TabIndex = 10;
+			this->Calculate->Text = L"Обчислити";
+			this->Calculate->UseVisualStyleBackColor = true;
+			this->Calculate->Click += gcnew System::EventHandler(this, &MyForm::Calculate_Click);
+			// 
+			// buttonLoad
+			// 
+			this->buttonLoad->Location = System::Drawing::Point(19, 393);
+			this->buttonLoad->Name = L"buttonLoad";
+			this->buttonLoad->Size = System::Drawing::Size(250, 33);
+			this->buttonLoad->TabIndex = 11;
+			this->buttonLoad->Text = L"Завантажити із файла";
+			this->buttonLoad->UseVisualStyleBackColor = true;
+			this->buttonLoad->Click += gcnew System::EventHandler(this, &MyForm::buttonLoad_Click);
+			// 
+			// buttonSave
+			// 
+			this->buttonSave->Location = System::Drawing::Point(19, 432);
+			this->buttonSave->Name = L"buttonSave";
+			this->buttonSave->Size = System::Drawing::Size(250, 33);
+			this->buttonSave->TabIndex = 12;
+			this->buttonSave->Text = L"Зберігти у файл";
+			this->buttonSave->UseVisualStyleBackColor = true;
+			this->buttonSave->Click += gcnew System::EventHandler(this, &MyForm::buttonSave_Click);
+			// 
+			// MyForm
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(11, 24);
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(958, 515);
+			this->Controls->Add(this->buttonSave);
+			this->Controls->Add(this->buttonLoad);
+			this->Controls->Add(this->Calculate);
+			this->Controls->Add(this->OutputCostOfYKg);
+			this->Controls->Add(this->requiredMass);
+			this->Controls->Add(this->label6);
+			this->Controls->Add(this->outputCostOfOneKg);
+			this->Controls->Add(this->inputCost);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->inputMass);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
+			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Margin = System::Windows::Forms::Padding(6, 6, 6, 6);
+			this->Name = L"MyForm";
+			this->Text = L"MyForm";
+			this->ResumeLayout(false);
+			this->PerformLayout();
+
+		}
+#pragma endregion
+		private: System::Void Calculate_Click(System::Object^ sender, System::EventArgs^ e) {
+			// Отримуємо введені значення маси та вартості цукерок
+			double X = Convert::ToDouble(inputMass->Text);
+			double A = Convert::ToDouble(inputCost->Text);
+			double Y = Convert::ToDouble(requiredMass->Text);
+
+			// Обчислюємо вартість одного кілограма цукерок
+			double pricePerKg = A / X;
+    
+			// Обчислюємо вартість Y кілограмів цукерок
+			double totalPrice = pricePerKg * Y;
+
+			// Оновлюємо текстові поля з результатами обчислень
+			outputCostOfOneKg->Text = "Вартість одного Килограма цукерок дорівнює: " + pricePerKg.ToString();
+			OutputCostOfYKg->Text = Y + " кг цих цукерок коштує: " + totalPrice.ToString();
+		}
+
+
+
+	private: System::Void buttonLoad_Click(System::Object^ sender, System::EventArgs^ e) {
+    // Відкриваємо діалогове вікно для вибору файлу для завантаження
+		OpenFileDialog^ openFileDialog = gcnew OpenFileDialog();
+		openFileDialog->Filter = "Текстові файли|*.txt|Усі файли|*.*";
+
+		// Якщо користувач вибрав файл та натиснув кнопку "Відкрити"
+		if (openFileDialog->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+			// створюємо StreamReader для читання даних з файлу
+			System::IO::StreamReader^ sr = gcnew System::IO::StreamReader(openFileDialog->FileName);
+        
+			// читаємо дані з файлу та встановлюємо їх у текстові поля
+			inputMass->Text = sr->ReadLine();
+			inputCost->Text = sr->ReadLine();
+			requiredMass->Text = sr->ReadLine();
+        
+			// закриваємо StreamReader
+			sr->Close();
+		}
+	}
+
+
+	//Збереження даних у файл
+	private: System::Void buttonSave_Click(System::Object^ sender, System::EventArgs^ e) {
+		// Відкриваємо діалогове вікно для вибору файлу для збереження
+		SaveFileDialog^ saveFileDialog = gcnew SaveFileDialog();
+		saveFileDialog->Filter = "Текстові файли|*.txt|Усі файли|*.*";
+
+		// Якщо користувач вибрав файл та натиснув кнопку "Зберегти"
+		if (saveFileDialog->ShowDialog() == System::Windows::Forms::DialogResult::OK) {
+			// створюємо StreamWriter для запису даних у файл
+			System::IO::StreamWriter^ sw = gcnew System::IO::StreamWriter(saveFileDialog->FileName);
+        
+			// записуємо дані з текстових полів у файл
+			sw->WriteLine(inputMass->Text);
+			sw->WriteLine(inputCost->Text);
+			sw->WriteLine(requiredMass->Text);
+			sw->WriteLine(outputCostOfOneKg->Text);
+			sw->WriteLine(OutputCostOfYKg->Text);
+        
+			// закриваємо StreamWriter
+			sw->Close();
+		}
+	}
+	};
+}
